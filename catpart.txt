@@ -1,0 +1,46 @@
+# Input string
+
+  Length:
+    0.                        [property zerovalue]
+    1.
+    2.
+    3.
+    size - 1.
+    size + 7.
+    size + 1.
+    size/(.9).
+    size*2.
+    size*2 - 1.
+    size*2 + 1.
+    maxint.
+
+# Options
+Options:
+
+-b				[property replaceBackupCopy]
+-f				[property replaceUtilityString]
+-l				[property replaceUtilityLastString]
+-i				[property replaceUtilityStringCase]
+
+
+# Fields
+Presence of a list of bytes, characters, or fields:
+	Not present.		[error]
+	Present.			[single]
+Valid integer field input:
+	0.					[error]
+	>0.					[single][property posInt]#only positive integers are valid range boundaries				
+	<0.			
+
+  Content:
+    alphanumeric characters.  [if !zerovalue]
+    special characters.       [if !zerovalue]
+    spaces.                   [if !zerovalue]
+
+# Input size
+
+  Value:
+    0.
+    >0.			      [error]
+    <0.                       
+    maxint.                   [single]
